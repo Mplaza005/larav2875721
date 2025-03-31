@@ -45,4 +45,23 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+      //  Relacion Uno A Uno
+      public function profile(){
+        // $profile = Profile::where('user_id',$this->id)->first();
+       return $this->hasOne('App\Models\Profile');
+    }
+
+     // Relacion Uno a Muchos con post
+     public function posts(){
+        return $this->hasMany('App\Models\Post');
+    }
+
+     //Relacion muchos a muchos
+     public function roles(){
+        return $this->belongsToMany('App\Models\Role');
+    }
+
+
+
 }
