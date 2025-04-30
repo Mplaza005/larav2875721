@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\CategoryController;
+use App\Http\Controllers\PetController;
 use App\Http\Controllers\PostController;
 
 
@@ -17,3 +18,8 @@ Route::get('categories/{category}', [CategoryController::class, 'show'])->name('
 Route::put('category/{category}',[CategoryController::class,'update'])->name('category.update');
 Route::delete('category/{category}',[CategoryController::class,'destroy'])->name('category.destroy');
 Route::get('curso/{category}/editar',[CategoryController::class,'edit'])->name('category.edit');
+
+
+Route::get('pets', [PetController::class, 'index'])->name('pet.index');
+Route::get('pet/create', [PetController::class, 'create'])->name('pet.create');
+Route::post('pet/store', [PetController::class, 'store'])->name('pet.store');
