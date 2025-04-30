@@ -8,9 +8,9 @@ class TallerController extends Controller
 {
     //
 
-    public function calcularCuadratica($a,$b,$c){
+    public function home(){
 
-        return "hola desde cuadratica..";
+        return view('frm_product');
 
     }
 
